@@ -102,7 +102,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!-- BEGIN LOGO -->
                                 <div class="page-logo">
                                     <a href="#">
-                                        <img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png') ?>" width="500" alt="logo" class="logo-default" style="margin-top:10px;">
+                                        <img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png') ?>" width="500" height="80" alt="logo" class="logo-default" style="margin-top:10px;">
                                     </a>
                                 </div>
                                 <!-- END LOGO -->
@@ -180,7 +180,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- BEGIN FOOTER -->
                     <!-- BEGIN INNER FOOTER -->
                     <div class="page-footer">
-                        <div class="container"> 2017 &copy; Dwi Kreasi Jaya
+                        <div class="container"> 2017 &copy; Mitra Semesta Informatika
                         </div>
                     </div>
                     <div class="scroll-to-top">
