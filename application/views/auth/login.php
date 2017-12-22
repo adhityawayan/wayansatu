@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Dwi Kreasi Jaya | Login</title>
+        <title>Mitrapos | Login</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #3 for " name="description" />
@@ -42,7 +42,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END PAGE LEVEL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="<?php echo base_url('assets/global/img/dwikreasi.ico') ?>" /> </head>
+        <link rel="shortcut icon" href="<?php echo base_url('assets/global/img/mitrasi.ico') ?>" /> </head>
     <!-- END HEAD -->
 
     <body class=" login">
@@ -112,7 +112,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 						<div class="col-md-5" style="margin-top:-25px"> 
 							<div class="  text-right">
-								<p style="font-size:12px;">Copyright © 2017 <br><a href="#">PT. Dwi Kreasi Jaya</a></p>
+								<p style="font-size:12px;">Copyright © 2017 <br><a href="#">Mitra Semesta Informatika</a></p>
 							</div>
 						</div>
 					</div> 
