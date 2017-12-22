@@ -102,7 +102,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!-- BEGIN LOGO -->
                                 <div class="page-logo">
                                     <a href="#">
-                                        <img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png') ?>" width="500" alt="logo" class="logo-default" style="margin-top:10px;">
+                                        <img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png') ?>" alt="logo" class="logo-default" style="margin-top:10px;">
                                     </a>
                                 </div>
                                 <!-- END LOGO -->
