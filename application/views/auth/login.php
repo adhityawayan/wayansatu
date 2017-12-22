@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<div class="login-content" style="margin-top:20%;width: 100%"> 
 					<div class="row center">
 						<div class="col-md-12" style="text-align:center">
-							<img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png')?>" width="400px"> 	
+							<img src="<?php echo base_url('assets/pages/img/mitrasi.png')?>" width="400px"> 	
 						</div> 
 						<br>
 						<div class="col-md-12">
