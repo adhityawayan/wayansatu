@@ -8,10 +8,10 @@
 					<span class="caption-subject font-dark sbold uppercase"><?php echo $caption?></span>
 				</div>
 				<div class="actions">
-                <div class="btn-group" >
-                        <?php echo anchor('Penyesuaian_stok/form/','<i class="fa fa-pencil"></i> Tambah Data',array('class'=>'btn btn-circle btn-info btn-sm'));?>
-                </div>
-            </div>
+					<div class="btn-group" >
+							<?php echo anchor('Penyesuaian_stok/form/','<i class="fa fa-pencil"></i> Tambah Data',array('class'=>'btn btn-circle btn-info btn-sm'));?>
+					</div>
+				</div>
 			</div>
 			<div class="portlet-body">
 				<div class="table-container">

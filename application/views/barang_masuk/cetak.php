@@ -52,7 +52,7 @@ $pdf->Cell(55,8,'', 0, 0, 'C');
 $pdf->Cell(20,8,'(Kg/Meter)', 0, 0, 'C');
 $pdf->Cell(20,8,'(Meter)', 0, 0, 'C');
 $pdf->Cell(25,8,'', 0, 0, 'C');
-$pdf->Cell(35,8,'(Rp/Kg)', 0, 0, 'C');
+$pdf->Cell(35,8,@$bdt->finishing->finishing ? '(Rp/Kg)' : '(Rp/Pcs)', 0, 0, 'C');//
 $pdf->Cell(35,8,'Rp/Kg', 1, 0, 'C');
 $pdf->Cell(40,8,'Rp/Pc', 1, 0, 'C');
 $pdf->Cell(25,8,'(Pcs)', 0, 1, 'C');
@@ -65,8 +65,8 @@ if($barang_detail){
 		$pdf->Cell(20,8,number_format($bdt->panjang, 2, ',', '.'), 1, 0, 'R');
 		$pdf->Cell(25,8,@$bdt->finishing->finishing, 1, 0, 'C');
 		$pdf->Cell(35,8,number_format($bdt->harga_beli, 2, ',', '.'), 1, 0, 'R');
-		$pdf->Cell(35,8,number_format($bdt->harga_jual, 2, ',', '.'), 1, 0, 'R');
-		$pdf->Cell(40,8,number_format($hpc, 2, ',', '.'), 1, 0, 'R');
+		$pdf->Cell(35,8,@$bdt->finishing->finishing ? number_format($bdt->harga_jual, 2, ',', '.') : '', 1, 0, 'R');
+		$pdf->Cell(40,8,@$bdt->finishing->finishing ? number_format($hpc, 2, ',', '.'):number_format($bdt->harga_jual, 2, ',', '.') , 1, 0, 'R');
 		$pdf->Cell(25,8,number_format($bdt->jumlah, 0, ',', '.'), 1, 1, 'R');
 	}
 }

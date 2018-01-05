@@ -9,12 +9,12 @@
 						<span class="caption-subject font-dark sbold uppercase"><?php echo $caption?></span>
 					</div>
 					<div class="actions">
-					<div class="btn-group" >
-						<button type="submit" class="btn btn-circle green-jungle btn-sm" id="exportExcel">
-							<i class="fa fa-file-excel-o"></i> Export Excel
-						</button>
+						<div class="btn-group" >
+							<button type="submit" class="btn btn-circle green-jungle btn-sm" id="exportExcel">
+								<i class="fa fa-file-excel-o"></i> Export Excel
+							</button>
+						</div>
 					</div>
-				</div>
 				</div>
 				<div class="portlet-body">
 					<div class="table-container">

@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Mitrapos | Login</title>
+        <title>Dwi Kreasi Jaya | Login</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #3 for " name="description" />
@@ -42,7 +42,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END PAGE LEVEL STYLES -->
         <!-- BEGIN THEME LAYOUT STYLES -->
         <!-- END THEME LAYOUT STYLES -->
-        <link rel="shortcut icon" href="<?php echo base_url('assets/global/img/mitrasi.ico') ?>" /> </head>
+        <link rel="shortcut icon" href="<?php echo base_url('assets/global/img/dwikreasi.ico') ?>" /> </head>
     <!-- END HEAD -->
 
     <body class=" login">
@@ -55,7 +55,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<div class="login-content" style="margin-top:20%;width: 100%"> 
 					<div class="row center">
 						<div class="col-md-12" style="text-align:center">
-							<img src="<?php echo base_url('assets/pages/img/mitrasi.png')?>" width="400px"> 	
+							<img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png')?>" width="400px"> 	
 						</div> 
 						<br>
 						<div class="col-md-12">
@@ -104,7 +104,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								</style>
 								<div class="mt-list-container list-simple">
 									<ul>
-										<li>Developed By: <strong><a target="_blank" href="http://www.mitrasi.com/">Mitra Semesta Informatika</a><br>support@mitrapos.id</strong></li>
+										<li>Developed By: <strong><a target="_blank" href="http://www.mitrasi.com/">Mitra Semesta Informatika</a><br>Support@mitrapos.com</strong></li>
 									</ul>
 								</div>
 							</div>
@@ -112,7 +112,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 						<div class="col-md-5" style="margin-top:-25px"> 
 							<div class="  text-right">
-								<p style="font-size:12px;">Copyright © 2017 <br><a href="#">Mitra Semesta Informatika</a></p>
+								<p style="font-size:12px;">Copyright © 2017 <br><a href="#">PT. Dwi Kreasi Jaya</a></p>
 							</div>
 						</div>
 					</div> 

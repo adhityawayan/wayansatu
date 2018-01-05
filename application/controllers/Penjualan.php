@@ -119,8 +119,8 @@ class Penjualan extends MY_Controller {
 					$data2 = array(
 							'parent' => $idinsert,
 							'barang' => $this->input->post('barang_this')[$i],
-							'panjang' => str_replace(",",".",str_replace(".","",$this->input->post('panjang')[$i])),
-							'finishing' => $this->input->post('finish')[$i],
+							'panjang' => @$this->input->post('panjang')[$i]==''? 0 : str_replace(",",".",str_replace(".","",$this->input->post('panjang')[$i])),
+							'finishing' => @$this->input->post('finish')[$i]==''? 0 : $this->input->post('finish')[$i],
 							'harga' => str_replace(",",".",str_replace(".","",$this->input->post('harga')[$i])),
 							'stok' => str_replace(",",".",str_replace(".","",$this->input->post('stok')[$i])),
 							'jumlah' => str_replace(",",".",str_replace(".","",$this->input->post('qty')[$i])),

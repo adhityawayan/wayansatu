@@ -79,7 +79,15 @@ class S_user_model extends MY_Model
         return password_verify($pass, $encrypt_pass);
     }
 	public function updatesss(){
-	$sql = "	ALTER TABLE pengiriman ADD COLUMN customer INTEGER NULL;";
+	$sql = "ALTER TABLE perusahaan_bank ADD COLUMN transaksi char(1);
+				ALTER TABLE perusahaan_bank ADD COLUMN pajak_stat char(1);
+
+				ALTER TABLE penjualan ADD COLUMN pajak_stat char(1) NULL;
+
+				ALTER TABLE sales_contract ADD COLUMN ppn FLOAT NULL;
+				ALTER TABLE sales_contract ADD COLUMN pajak_stat char(1) NULL;
+
+				ALTER TABLE pengiriman ADD COLUMN customer INTEGER NULL;";
 		$query = $this->db->query($sql);
 	}
 }

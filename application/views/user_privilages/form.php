@@ -50,10 +50,10 @@
 													?>
 													<tr>
 														<td><input type="hidden" name="id[]" value="<?php echo @$c->id_priv ?>"> <input type="hidden" name="menu[]" value="<?php echo @$c->id ?>"><?php echo $c->menu ?></td>
-														<td align="center"> <input type="checkbox" value="1" name="create[]" <?php echo @($c->create == 1) ? 'checked': ''?> style="cursor:pointer;"/> </td>
-														<td align="center"> <input type="checkbox" value="1" name="read[]" <?php echo @($c->read == 1) ? 'checked': ''?> style="cursor:pointer;"/> </td>
-														<td align="center"> <input type="checkbox" value="1" name="update[]" <?php echo @($c->update == 1) ? 'checked': ''?> style="cursor:pointer;"/> </td>
-														<td align="center"> <input type="checkbox" value="1" name="delete[]" <?php echo @($c->delete == 1) ? 'checked': ''?> style="cursor:pointer;"/></td>
+														<td align="center"> <input type="checkbox" value="1" name="create_<?php echo @$c->id ?>" <?php echo @($c->create == 1) ? 'checked': ''?> style="cursor:pointer;"/> </td>
+														<td align="center"> <input type="checkbox" value="1" name="read_<?php echo @$c->id ?>" <?php echo @($c->read == 1) ? 'checked': ''?> style="cursor:pointer;"/> </td>
+														<td align="center"> <input type="checkbox" value="1" name="update_<?php echo @$c->id ?>" <?php echo @($c->update == 1) ? 'checked': ''?> style="cursor:pointer;"/> </td>
+														<td align="center"> <input type="checkbox" value="1" name="delete_<?php echo @$c->id ?>" <?php echo @($c->delete == 1) ? 'checked': ''?> style="cursor:pointer;"/></td>
 													</tr>
 												<?php }
 											}?>

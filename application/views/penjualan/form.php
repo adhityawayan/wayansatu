@@ -328,6 +328,7 @@ $(function(){
 		  url: "<?php echo site_url('Stok_barang/getStok')?>/"+ $("#barang"+id).val(),
 		  dataType: "Json"
 		}).done(function( msg ) {
+			
 			if(!msg){
 				var stok  =0;
 				var berat  =0;
@@ -338,13 +339,23 @@ $(function(){
 				var finish  ="";
 				$("#qty"+index).attr("readonly");
 			}else{
-				var berat = msg.barang.berat;
-				var stok = msg.stok;
-				var harga_dasar = msg.finishing.harga;
-				var harga = msg.finishing.harga*msg.barang.berat*msg.panjang;
-				var barang = msg.barang.id;
-				var panjang = msg.panjang;
-				var finish = msg.finishing.finishing;
+				if(msg.finishing){
+					var berat = msg.barang.berat;
+					var stok = msg.stok;
+					var harga_dasar = msg.finishing.harga;
+					var harga = msg.finishing.harga*msg.barang.berat*msg.panjang;
+					var barang = msg.barang.id;
+					var panjang = msg.panjang;
+					var finish = msg.finishing.finishing;
+				}else{
+					var berat = '0';
+					var stok = msg.stok;
+					var harga_dasar = '0';
+					var harga = msg.harga;
+					var barang = msg.barang.id;
+					var panjang = '0';
+					var finish = '';
+				}
 				$("#qty"+index).removeAttr("readonly");
 			}
 			$("#berat"+id).val(berat);
@@ -381,10 +392,11 @@ $(function(){
 		var arr = $('.total');
 		var tot = 0;
 		for(var i=0;i<arr.length;i++){
+			
 			var harga = arr[i].value;
-			harga = harga.replace(".", "");
+			harga = harga.split(".").join("");
 			harga = harga.replace(",", ".");
-		
+			
 			if(parseInt(harga))
 				tot += parseInt(harga);
 		}
@@ -398,8 +410,8 @@ $(function(){
 		var diskon_value = $("#diskonvalue").val();
 		var total = $("#total_awal").val();
 		
-		diskon_value = diskon_value.replace(".", "");
-		total = total.replace(".", "");
+		diskon_value = diskon_value.split(".").join("");
+		total = total.split(".").join("");
 		
 		
 		diskon_value = diskon_value.replace(",", ".");

@@ -7,7 +7,7 @@ class Penyesuaian_harga extends MY_Controller {
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('Penyesuaian_harga_model');
-        $this->load->model('Penyesuaian_harga_detail_model');
+        $this->load->model('Penyesuaian_harga_detail2_model', 'Penyesuaian_harga_detail_model');
         $this->load->model('Barang_model');
         $this->load->model('Stok_barang_model');
         $this->load->model('Finishing_barang_model');
@@ -116,35 +116,19 @@ class Penyesuaian_harga extends MY_Controller {
 				if($this->Penyesuaian_harga_model->insert($data)){
 					$idinsert 		= $this->db->insert_id();
 					$i=0;
-					foreach($this->input->post('barang') as $b){
+					foreach($this->input->post('finishing') as $b){
 						$data2 = array(
 							'parent' => $idinsert,
-							'barang' => $this->input->post('barang')[$i],
-							'finish' => $this->input->post('finishing')[$i],
-							'panjang' => $this->input->post('panjang')[$i],
-							'harga_sebelum' => $this->input->post('harga_sebelum')[$i],
-							'harga_koreksi' => $this->input->post('harga_koreksi')[$i],
-							'catatan' => $this->input->post('catatan_det')[$i]
+							'finishing' => $this->input->post('finishing')[$i],
+							'harga_sebelum' => str_replace(",",".",str_replace(".","",$this->input->post('harga_sebelum')[$i])),
+							'harga_koreksi' => str_replace(",",".",str_replace(".","",$this->input->post('harga_koreksi')[$i])),
 						);
 						if($this->Penyesuaian_harga_detail_model->insert($data2)){
-							$whereinv = array(
-								'barang' => $this->input->post('barang')[$i],
-								'finish' => $this->input->post('finishing')[$i],
-								'panjang' => $this->input->post('panjang')[$i],
-							);
-							$inventory = $this->Stok_barang_model->get($whereinv);
+							$inventory = $this->Finishing_barang_model->get($this->input->post('finishing')[$i]);
 							
 							if($inventory){
-								$datainv["harga"] = $this->input->post('harga_koreksi')[$i];
-								$this->Stok_barang_model->update($datainv, $inventory->id);
-							}else{
-								$datainv = array(
-									'barang' => $this->input->post('barang')[$i],
-									'finish' => $this->input->post('finishing')[$i],
-									'panjang' => $this->input->post('panjang')[$i],
-									'harga' => $this->input->post('harga_koreksi')[$i]
-								);
-								$this->Stok_barang_model->insert($datainv);
+								$datainv["harga"] = str_replace(",",".",str_replace(".","",$this->input->post('harga_koreksi')[$i]));
+								$this->Finishing_barang_model->update($datainv, $inventory->id);
 							}
 						}
 					}
@@ -158,7 +142,7 @@ class Penyesuaian_harga extends MY_Controller {
 	}
 	public function cetak($id){
 		$data["penyesuaian_harga"] = $this->Penyesuaian_harga_model->get($id);
-		$data["penyesuaian_harga_detail"] = $this->Penyesuaian_harga_detail_model->with_barang()->with_finishing()->get_all(array("parent"=>$id));
+		$data["penyesuaian_harga_detail"] = $this->Penyesuaian_harga_detail_model->with_finishing()->get_all(array("parent"=>$id));
 		$this->load->view('penyesuaian_harga/cetak', $data);
 	}
 }

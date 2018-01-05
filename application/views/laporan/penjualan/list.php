@@ -4,18 +4,18 @@
 		<form action="<?php echo base_url();?>Laporan/excelPenjualan" method="post">
 			<div class="portlet light portlet-fit portlet-datatable ">
 				<div class="portlet-title">
-						<div class="caption">
-							<i class="icon-settings font-dark"></i>
-							<span class="caption-subject font-dark sbold uppercase"><?php echo $caption?></span>
-						</div>
-						<div class="actions">
-							<div class="btn-group" >
-								<button type="submit" class="btn btn-circle green-jungle btn-sm" id="exportExcel">
-									<i class="fa fa-file-excel-o"></i> Export Excel
-								</button>
-							</div>
+					<div class="caption">
+						<i class="icon-settings font-dark"></i>
+						<span class="caption-subject font-dark sbold uppercase"><?php echo $caption?></span>
+					</div>
+					<div class="actions">
+						<div class="btn-group" >
+							<button type="submit" class="btn btn-circle green-jungle btn-sm" id="exportExcel">
+								<i class="fa fa-file-excel-o"></i> Export Excel
+							</button>
 						</div>
 					</div>
+				</div>
 				<div class="portlet-body">
 					<div class="table-container">
 						<div class="table-actions-wrapper">

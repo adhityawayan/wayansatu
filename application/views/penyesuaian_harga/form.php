@@ -38,9 +38,7 @@
 							<table class="table table-bordered table-hover">
 								<thead>
 									<tr>
-										<th> Section</th>
 										<th> Finishing</th>
-										<th> Panjang</th>
 										<th> Harga Sebelum </th>
 										<th> Harga Koreksi </th>
 										<th> Catatan </th>
@@ -95,18 +93,12 @@ $(function(){
 	addDetail = function(){
 		$("#detailBarang").prepend('<tr id="tr'+index+'">\
 									<td> \
-									<select onchange="getStok('+index+')" id="barang'+index+'" name="barang[]" class="form-control select2-ajax barang" >\
+									<select onchange="getHarga('+index+')" id="finishing'+index+'" name="finishing[]" class="form-control select2-ajax finishing" >\
 										\
 									</select>\
 									</td>\
-									<td> \
-									<select onchange="getStok('+index+')" id="finishing'+index+'" name="finishing[]" class="form-control select2-ajax finishing" >\
-										\
-									</select>\
-									</td>\
-									<td><input onkeyup="getStok('+index+')" id="panjang'+index+'" type="text" name="panjang[]" class="form-control" placeholder="Panjang"></td>\
-									<td><input readonly id="harga_sebelum'+index+'" type="text" name="harga_sebelum[]" class="form-control" value="0"></td>\
-									<td><input id="harga_koreksi'+index+'" type="text" name="harga_koreksi[]" class="form-control"></td>\
+									<td><input readonly id="harga_sebelum'+index+'" type="text" name="harga_sebelum[]" class="form-control number" value="0"></td>\
+									<td><input id="harga_koreksi'+index+'" type="text" name="harga_koreksi[]" class="form-control number"></td>\
 									<td><textarea name="catatan_det[]" id="catatan'+index+'" class="form-control"></textarea></td>\
 									<td>\
 									<button type="button" class="btn btn-icon-only red delete" onclick="deleteDetail('+index+')"  title="delete">\
@@ -114,41 +106,6 @@ $(function(){
 									</button>\
 									</td>\
 								</tr>');
-		$(".barang").select2({
-			 placeholder: "Select",
-			 allowClear: false,
-			 width: "off",
-			 ajax: {
-				 url: '<?php echo site_url('form/dd/Barang_model') ?>',
-				 dataType: 'json',
-				 delay: 250,
-				 data: function(params) {
-					 return {
-						 q: params.term, // search term
-						 page: params.page
-					 };
-				 },
-				 processResults: function(data, params) {
-					 // parse the results into the format expected by Select2.
-					 // since we are using custom formatting functions we do not need to
-					 // alter the remote JSON data
-					 params.page = params.page || 1;
-					 return {
-						 results: data.items,
-						 pagination: {
-							  more: (params.page * 30) < data.total_count
-						  }
-					 };
-				 },
-				 cache: true
-			 },
-			 escapeMarkup: function(markup) {
-				 return markup;
-			 }, // let our custom formatter work
-			 minimumInputLength: 0,
-			 templateResult: formatRepo,
-			 templateSelection: formatRepoSelection
-		 });
 		 $(".finishing").select2({
 			 placeholder: "Select",
 			 allowClear: false,
@@ -185,13 +142,13 @@ $(function(){
 			 templateSelection: formatRepoSelection
 		 });
 		 index++;
+		 FormInputMask.init();
 	}
-	getStok = function(interval){
+	getHarga	= function(interval){
 		$.ajax({
 		  method: "POST",
 		  dataType: "Json",
-		  url: "<?php echo site_url('Stok_barang/getCurrentStok')?>",
-		  data: { barang: $("#barang"+interval).val(), finishing: $("#finishing"+interval).val(), "panjang": $("#panjang"+interval).val() }
+		  url: "<?php echo site_url('Finishing_barang/getData/')?>"+$("#finishing"+interval).val()
 		}).done(function( msg ) {
 			if(msg){
 				$("#harga_sebelum"+interval).val(msg.harga);
@@ -217,9 +174,7 @@ $(function(){
 	terhapus = function(row){
 		  for(var i=row+1; i<index;i++){
 			  var la = i-1;
-			  $("#barang"+la).html($("#barang"+ i).val());
 			  $("#finishing"+la).html($("#finishing"+ i).val());
-			  $("#panjang"+la).val($("#panjang"+ i).val());
 			  $("#harga_sebelum"+la).val($("#harga_sebelum"+ i).val());
 			  $("#harga_koreksi"+la).val($("#harga_koreksi"+ i).val());
 			  $("#catatan"+la).val($("#catatan"+ i).val());

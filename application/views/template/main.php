@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <head>
         <meta charset="utf-8" />
-        <title>Mitra Semesta Informatika | POS</title>
+        <title>Dwi Kreasi Jaya | POS</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta content="Preview page of Metronic Admin Theme #3 for " name="description" />
@@ -102,7 +102,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <!-- BEGIN LOGO -->
                                 <div class="page-logo">
                                     <a href="#">
-                                        <img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png') ?>" alt="logo" class="logo-default" style="margin-top:10px;">
+                                        <img src="<?php echo base_url('assets/pages/img/dwikreasijaya.png') ?>" width="500" alt="logo" class="logo-default" style="margin-top:10px;">
                                     </a>
                                 </div>
                                 <!-- END LOGO -->
@@ -180,7 +180,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- BEGIN FOOTER -->
                     <!-- BEGIN INNER FOOTER -->
                     <div class="page-footer">
-                        <div class="container"> 2017 &copy; Mitra Semesta Informatika
+                        <div class="container"> 2017 &copy; Dwi Kreasi Jaya
                         </div>
                     </div>
                     <div class="scroll-to-top">

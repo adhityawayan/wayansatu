@@ -28,7 +28,7 @@
                             <td></td>
                     
                             <td><select name='barang' class='form-control form-filter select2-ajax' data-url='<?php echo site_url('form/dd/Barang_model') ?>'></select></td>
-                            <td><input type="text" class="form-control form-filter input-sm" name="panjang"></td>
+                           <td><input type="text" class="form-control form-filter input-sm" name="panjang"></td>
                             <td><select name='finish' class='form-control form-filter select2-ajax' data-url='<?php echo site_url('form/dd/Finishing_barang_model') ?>'></select></td>
                             <td><input type="text" class="form-control form-filter input-sm" name="stok"></td>
                             <td>

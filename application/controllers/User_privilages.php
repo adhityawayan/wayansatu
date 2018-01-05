@@ -52,10 +52,10 @@ class User_privilages extends MY_Controller {
 			$data = array(
 				'tipe_user' => $this->input->post('id_user'),
 				'menu' => $this->input->post('menu')[$i],
-				'create' => @$this->input->post('create')[$i] ? $this->input->post('create')[$i] : 0,
-				'read' => @$this->input->post('read')[$i] ? $this->input->post('read')[$i] : 0,
-				'update' => @$this->input->post('update')[$i] ? $this->input->post('update')[$i] : 0,
-				'delete' => @$this->input->post('delete')[$i] ? $this->input->post('delete')[$i] : 0
+				'create' => @$this->input->post('create_'.$id) ? $this->input->post('create_'.$id) : 0,
+				'read' => @$this->input->post('read_'.$id) ? $this->input->post('read_'.$id) : 0,
+				'update' => @$this->input->post('update_'.$id) ? $this->input->post('update_'.$id) : 0,
+				'delete' => @$this->input->post('delete_'.$id) ? $this->input->post('delete_'.$id) : 0
             );
 			
 			if (empty($this->input->post('id')[$i])) {
@@ -80,7 +80,7 @@ class User_privilages extends MY_Controller {
 			}
 			$i++;
 		}
-		// var_dump($res);
+		// var_dump($data);
 		$this->output->set_content_type('application/json')->set_output(json_encode($res));
 	}
 }

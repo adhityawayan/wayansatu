@@ -128,7 +128,7 @@ class Barang_masuk extends MY_Controller {
 						$data2 = array(
 							'parent' => $idinsert,
 							'barang' => $this->input->post('barang')[$i],
-							'finish' => $this->input->post('finishing')[$i],
+							'finish' => @$this->input->post('finishing')[$i]==''? 0 : $this->input->post('finishing')[$i],
 							'panjang' => str_replace(",",".",str_replace(".","",@$this->input->post('panjang')[$i]==''? 0 : $this->input->post('panjang')[$i])),
 							'harga_beli' => str_replace(",",".",str_replace(".","",$this->input->post('harga_beli')[$i])),
 							'harga_jual' => str_replace(",",".",str_replace(".","",$this->input->post('harga_jual')[$i])),
@@ -138,7 +138,7 @@ class Barang_masuk extends MY_Controller {
 							if($this->input->post('finishing')[$i] != null){
 								$whereinv = array(
 									'barang' => $this->input->post('barang')[$i],
-									'finish' => $this->input->post('finishing')[$i],
+									'finish' => @$this->input->post('finishing')[$i]==''? 0 : $this->input->post('finishing')[$i],
 									'panjang' => str_replace(",",".",str_replace(".","",@$this->input->post('panjang')[$i]==''? 0 : $this->input->post('panjang')[$i])),
 								);
 								$inventory = $this->Stok_barang_model->get($whereinv);
@@ -148,14 +148,14 @@ class Barang_masuk extends MY_Controller {
 								}else{
 									$datainv = array(
 										'barang' => $this->input->post('barang')[$i],
-										'finish' => $this->input->post('finishing')[$i],
+										'finish' => @$this->input->post('finishing')[$i]==''? 0 : $this->input->post('finishing')[$i],
 										'panjang' => str_replace(",",".",str_replace(".","",@$this->input->post('panjang')[$i]==''? 0 : $this->input->post('panjang')[$i])),
 										'harga' => str_replace(",",".",str_replace(".","",$this->input->post('harga_jual')[$i])),
 										'stok' => str_replace(",",".",str_replace(".","",$this->input->post('jumlah')[$i]))
 									);
 									$this->Stok_barang_model->insert($datainv);
 								}
-								
+								if($this->input->post('finishing')[$i]!=''){
 								$finish = $this->Finishing_barang_model->get($this->input->post('finishing')[$i]);
 								
 								if(str_replace(",",".",str_replace(".","",$this->input->post('harga_jual')[$i])) > $finish->harga){
@@ -165,6 +165,7 @@ class Barang_masuk extends MY_Controller {
 									
 									$this->Finishing_barang_model->update($datafinish, $finish->id);
 								}
+								}
 							}else{
 								$inventory = $this->Stok_barang_model->get(array("barang"=> $this->input->post('barang')[$i]));
 								if($inventory){
@@ -173,6 +174,8 @@ class Barang_masuk extends MY_Controller {
 								}else{
 									$datainv = array(
 										'barang' => $this->input->post('barang')[$i],
+										'panjang'=>0,
+										'finish'=>'0',
 										'harga' => str_replace(",",".",str_replace(".","",$this->input->post('harga_jual')[$i])),
 										'stok' => str_replace(",",".",str_replace(".","",$this->input->post('jumlah')[$i]))
 									);

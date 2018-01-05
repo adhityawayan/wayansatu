@@ -48,12 +48,12 @@ class Auth extends CI_Controller {
 					}
 				} else {
 					$res['success'] 	= false;
-			    		$res['message'] 	= 'Username dan Password tidak sesuai';
+			    	$res['message'] 	= 'Username dan Password tidak sesuai';
 				}
 
 			} else {
 				$res['success'] 	= false;
-			    	$res['message'] 	= 'Username tidak ditemukan';
+			    $res['message'] 	= 'Username tidak ditemukan';
 			}
 
 		} else {

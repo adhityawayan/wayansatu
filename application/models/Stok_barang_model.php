@@ -22,6 +22,7 @@ class Stok_barang_model extends MY_Model
 		$order            = $this->input->post('order');
         $dataorder = array();
         $where = array();
+        // $wherebarang = array();
 
         $i=1;
         $dataorder[$i++] = 'barang';
