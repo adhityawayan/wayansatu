@@ -80,7 +80,7 @@ class Stok_barang extends MY_Controller {
 		$page	= $page - 1;
 		
 		
-		$this->db->limit($limit,($page*$limit));
+		// $this->db->limit($limit,($page*$limit));
 		if ($this->input->get('q')) {
 			$data_db =$this->Stok_barang_model->with_barang('where: section like \'%'.$this->input->get('q').'%\'')->with_finishing()->get_all();
 		}else{

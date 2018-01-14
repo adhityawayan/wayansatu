@@ -1,0 +1,5 @@
+ALTER TABLE barang_masuk_detail ALTER COLUMN finish DROP NOT NULL;
+
+ALTER TABLE stok_barang ALTER COLUMN finish DROP NOT NULL;
+
+ALTER TABLE stok_barang ALTER COLUMN panjang DROP NOT NULL;
